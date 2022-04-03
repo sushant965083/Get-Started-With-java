@@ -1,0 +1,28 @@
+-- method overloading
+	-- same method name but different argument numbers 
+	-- same method name but different argument types
+package oopsconcept;
+
+public class Books extends library{
+    String name;
+    String author;
+
+    public void giveInformation(String name, String author) {
+        System.out.println(name + " : " + author);
+    }
+
+    public void giveInformation(String author) {
+        System.out.println(author);
+    }
+
+    
+}
+
+public class composition {
+    public static void main(String[] args) {
+       Books book = new Books();
+       book.giveInformation("name 1", "author 1");
+       book.giveInformation("author 2");
+	   
+    }
+}

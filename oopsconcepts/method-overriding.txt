@@ -1,0 +1,38 @@
+package oopsconcept;
+
+public class library {
+   int noOfBooks;
+   String colorOfBooks;
+
+   public library() {}
+   
+   public void readBooks() {
+       System.out.println("Reading Books!");
+   }
+}
+
+public class Books extends library{
+    String name;
+    String author;
+    int noOfBooks;
+
+    public Books() {}
+
+    public void readBooks() {
+        System.out.println("Reading multiple books at same time!!");
+    }
+
+    
+}
+
+public class composition {
+    public static void main(String[] args) {
+       library lib = new library();
+       Books book = new Books();
+       library book1 = new Books();
+
+       lib.readBooks();
+       book.readBooks();
+       book1.readBooks();
+    }
+}

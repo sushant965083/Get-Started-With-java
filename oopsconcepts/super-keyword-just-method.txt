@@ -1,0 +1,29 @@
+-- simple example showing use of "super" keyword to call method
+
+package oopsconcept;
+
+public class library {
+   int numOfbooks;
+
+   public void readBooks() {
+       System.out.println("Reading");
+   }
+}
+
+public class Books extends library{
+    String name;
+    String author;
+
+    @Override
+    public void readBooks() {
+        super.readBooks();
+        System.out.println("Reading the book!!");
+    }
+}
+
+public class superKeyword {
+    public static void main(String[] args) {
+       Books book = new Books();
+       book.readBooks();
+    }
+}

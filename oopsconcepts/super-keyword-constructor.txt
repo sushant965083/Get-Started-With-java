@@ -1,0 +1,47 @@
+package oopsconcept;
+
+
+public class library {
+   int noOfBooks;
+   String colorOfBooks;
+
+   public library() {}
+
+    public library(int noOfBooks, String colorOfBooks) {
+        this.noOfBooks = noOfBooks;
+        this.colorOfBooks = colorOfBooks;
+    }
+    
+   public void readBooks() {
+       System.out.println("Reading");
+   }
+}
+
+public class Books extends library{
+    String name;
+    String author;
+
+    public Books(String name, int noOfBooks, String colorOfBooks) {
+        -- calling parent's class constructor should be the very first line
+		-- when we don't explicitly call parent's class contructor,
+		-- java implicitly calls parent's class no-args constructor by calling "super()"
+		-- if parent class don't have no-args contructor, java will show an error
+		
+		super(noOfBooks, colorOfBooks); 
+        this.name = name;
+
+    }
+
+    @Override
+    public void readBooks() {
+        super.readBooks();
+        System.out.println("Reading the book!!");
+    }
+}
+
+public class composition {
+    public static void main(String[] args) {
+       Books book = new Books("Volume 1", 10, "Red");
+       System.out.println(book.name + " : " + book.noOfBooks + " : " + book.colorOfBooks);
+    }
+}
